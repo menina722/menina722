@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="presence_form_view" model="ir.ui.view">
+        <field name="name">presence.pr.form</field>
+        <field name="model">presence.pr</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <button name="%(hr_attendance.hr_attendance_action)d"
+                            class="oe_stat_button"
+                            icon="fa-clock-o"
+                            type="action"
+                            context="{'search_default_employee_id': id, 'search_default_check_in_filter': '1'}"
+                            groups="base.group_user"
+                            help="Worked hours between two dates">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="hours_worked_between_two_dates_display"/>
+                                Hours
+                            </span>
+                            <span class="o_stat_text">
+                                Between 2 Dates
+                            </span>
+                        </div>
+                    </button>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="presence_tree_view11" model="ir.ui.view">
+        <field name="name">presence.pr.tree</field>
+        <field name="model">presence.pr</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="hours_worked_between_two_dates"/>
+                <field name="hours_worked_between_two_dates_display"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="presence_act_window" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">presence.pr</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
+
+
+
+
+
+
+
+
